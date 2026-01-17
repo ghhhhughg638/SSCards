@@ -102,6 +102,8 @@ class DatabaseManager:
                 deck_code=deck.get('deck_code'),
                 favorite=False,
                 card_back='',
+                last_played=deck.get('last_played'),
+                create_date=deck.get('create_date'),
                 modify_date=deck.get('modify_date'),
                 user=user
             )
