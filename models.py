@@ -8,7 +8,7 @@ class User(Model):
     password = fields.CharField(max_length=50)
     player_name = fields.CharField(max_length=50)
     player_tag = fields.IntField(null=True)
-    decks: fields.ReverseRelation["Decks"] #设置一对多关系
+    decks: fields.ReverseRelation["Decks"]  #设置一对多关系
 
     britain_level = fields.IntField(default=500)  #英国国家等级
     britain_level_claimed = fields.IntField(default=500)  #英国已经领取的国家等级奖励
@@ -80,9 +80,9 @@ class Decks(Model):
     user: fields.ForeignKeyRelation[User] = fields.ForeignKeyField(
         'models.User', related_name='decks', on_delete=fields.CASCADE)  #属于哪个玩家
 
-    last_played = fields.DatetimeField(null=True)  # 最后使用时间
-    create_date = fields.DatetimeField(auto_now_add=True)  # 创建时间
-    modify_date = fields.DatetimeField(auto_now=True)  # 修改时间
+    last_played = fields.CharField(max_length=50, default='')  # 最后使用时间
+    create_date = fields.CharField(max_length=50, default='')  # 创建时间
+    modify_date = fields.CharField(max_length=50, default='')  # 修改时间
 
     class Meta:
         table = "decks"
