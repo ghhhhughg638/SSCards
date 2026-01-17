@@ -67,7 +67,7 @@ class SessionResource:
             "current_knockout_tourney": {},
             "dailymissions_url": f"http://{IP}/players/{ID}/dailymissions",
             "decks": {
-                "headers": []
+                "headers": decks_data
             },
             "decks_url": f"http://{IP}/players/{ID}/decks",
             "diamonds": 91,
