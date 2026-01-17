@@ -1,0 +1,5 @@
+PyMySQL==1.1.2
+uvicorn==0.40.0
+websockets==15.0.1
+falcon==4.2.0
+tortoise-orm==0.25.3
